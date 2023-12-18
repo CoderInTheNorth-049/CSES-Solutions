@@ -1,19 +1,10 @@
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
-//--------------------------------------------------
+
 #include <bits/stdc++.h>
 using namespace std;
 using namespace chrono;
 
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-using namespace __gnu_pbds;
-//------------------------------------------------------
-#define ordered_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>
-
-// *(o_set.find_by_order(1)) -> 2nd smallest num
-//  o_set.order_of_key(4) -> idx of 4 or no. of elements less than 4
-//======================================================================
 #define BUG
 #ifdef BUG
 #define bug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -32,18 +23,8 @@ void __f(const char *names, Arg1 &&arg1, Args &&...args)
 #else
 #define bug(...)
 #endif
-//======================================================================
 
 using ll=long long;
-#define ff first
-#define ss second
-
-struct HASH
-{
-    size_t operator()(const pair<ll,ll> &x)const{
-        return hash<long long>()(((long long)x.first)^(((long long)x.second)<<32));
-    }
-};
 
 class solution
 {

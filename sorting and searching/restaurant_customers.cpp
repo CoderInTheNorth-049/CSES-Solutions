@@ -68,7 +68,6 @@ class solution
 
 int32_t main()
 {
-
     // freopen("input.txt","r",stdin);
     // freopen("output.txt","w",stdout);
     solution test;
@@ -79,10 +78,7 @@ int32_t main()
     long long t;
     t = 1;
 
-    //cin >> t;
-
     cout << fixed << setprecision(9);
-    // primes=siuu();
     while (t-- > 0)
     {
         test.solve();

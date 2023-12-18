@@ -1,26 +1,10 @@
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
-//--------------------------------------------------
+
 #include <bits/stdc++.h>
 using namespace std;
 using namespace chrono;
 
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-using namespace __gnu_pbds;
-
-using ll=long long;
-#define ff first
-#define ss second
-//------------------------------------------------------
-#define ordered_set tree<ll, null_type,less<ll>, rb_tree_tag,tree_order_statistics_node_update>
-#define ordered_multiset tree<ll, null_type,less_equal<ll>, rb_tree_tag,tree_order_statistics_node_update>
-
-// *(o_set.find_by_order(1)) -> 2nd smallest num
-//  o_set.order_of_key(4) -> idx of 4 or no. of elements less than 4
-//  o_set.erase(o_set.find(2));
-//  multi.erase(multi.upper_bound(val))
-//======================================================================
 #define BUG
 #ifdef BUG
 #define bug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -39,17 +23,6 @@ void __f(const char *names, Arg1 &&arg1, Args &&...args)
 #else
 #define bug(...)
 #endif
-//======================================================================
-
-
-struct HASH
-{
-    size_t operator()(const pair<ll,ll> &x)const{
-        return hash<long long>()(((long long)x.first)^(((long long)x.second)<<32));
-    }
-};
-
-
 
 class solution
 {
@@ -62,17 +35,17 @@ class solution
 
     void solve()
     {
-     ll n,a,b;cin>>n>>a>>b;
-     vector<ll> v(n);
+     long long n,a,b;cin>>n>>a>>b;
+     vector<long long> v(n);
      for(int i=0;i<n;i++) cin>>v[i];
 
-     vector<ll> prefix(n+1);
+     vector<long long> prefix(n+1);
      for(int i=1;i<=n;i++)
      {
         prefix[i]=prefix[i-1]+v[i-1];
      }
-    ll ans=-1e18;
-    multiset<ll> mst;
+    long long ans=-1e18;
+    multiset<long long> mst;
     for(int i=a;i<=n;i++)
     {
         if(i>b)
