@@ -8,10 +8,10 @@ int main(){
     vector<vector<ll>> grid(n,vector<ll>(n,1e18));
     int x,y;
     ll w;
+    for(int i=0;i<n;i++) grid[i][i]=0;
     for(int i=0;i<m;i++){
         cin>>x>>y>>w;
         x--;y--;
-        grid[x][x]=0,grid[y][y]=0;
         grid[x][y]=min(grid[x][y],w);
         grid[y][x]=min(grid[y][x],w);
     } 
